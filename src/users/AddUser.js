@@ -1,10 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddUser = () => {
-
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const [user, setUser] = useState({
     name: "",
@@ -21,7 +20,7 @@ const AddUser = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:8081/user", user);
-    navigate("/")
+    navigate("/");
   };
 
   return (
@@ -66,9 +65,9 @@ const AddUser = () => {
             <button type="submit" className="btn btn-primary mx-3">
               Submit
             </button>
-            <button type="submit" className="btn btn-outline-danger">
+            <Link className="btn btn-outline-danger" to={"/"}>
               Cancel
-            </button>
+            </Link>
           </form>
         </div>
       </div>

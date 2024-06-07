@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -17,7 +18,9 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           ></button>
-          <button className="btn btn-outline-light">Add Emp</button>
+          <Link className="btn btn-outline-light" to="/adduser">
+            Add Emp
+          </Link>
         </div>
       </nav>
     </div>
